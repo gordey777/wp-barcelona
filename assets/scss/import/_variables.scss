@@ -1,5 +1,5 @@
 // Font Sizes
-$base-font-size: 16px;
+$base-font-size: 12px;
 $em-base: $base-font-size;
 $base-font-family: 'GothamPro', sans-serif;
 $heading-font-family: $base-font-family;
@@ -20,9 +20,9 @@ $base-line-height: 1.1;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$width: 980px;
-$footer: 50px;
-$footer_margin: $footer - 2 * $footer;
+$width: 1200px;
+//$footer: 50px;
+//$footer_margin: $footer - 2 * $footer;
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
@@ -32,10 +32,16 @@ $base-z-index: 0;
 $orange: orange;
 $red: red;
 $blue: #477dca;
-$gray-medium: #999;
-$gray-dark: #333;
-$gray-light: #ddd;
 
+$gray-medium: #ececec;
+$gray-dark: #868686;
+$gray-header: #343435;
+$gray-light: #f5f5f5;
+$red-slide: #cd7c64;
+$pink-medium: #f1658e;
+$pink-button: #d58585;
+$pink: #d58585;
+$red-title: #e41937;
 // Font Colors
 $base-font-color: $gray-dark;
 $action-color: $blue;

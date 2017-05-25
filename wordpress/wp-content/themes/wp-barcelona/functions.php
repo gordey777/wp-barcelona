@@ -79,7 +79,7 @@ function my_remove_recent_comments_style() {
 \*------------------------------------*/
 
 if (!isset($content_width)) {
-  $content_width = 980;
+  $content_width = 1170;
 }
 
 if (function_exists('add_theme_support')) {
@@ -751,7 +751,15 @@ function disable_emojicons_tinymce( $plugins ) {
 
 
 
-
+function post_is_in_descendant_category( $cats, $_post = null ){
+  foreach ( (array) $cats as $cat ) {
+    // get_term_children() accepts integer ID only
+    $descendants = get_term_children( (int) $cat, 'category');
+    if( $descendants && in_category( $descendants, $_post ) )
+      return true;
+  }
+  return false;
+}
 
 
 

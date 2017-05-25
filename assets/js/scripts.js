@@ -21,3 +21,61 @@ if (typeof jQuery === 'undefined') {
   console.log('jQuery has loaded');
 }
 // Place any jQuery/helper plugins in here.
+// Main Slider
+jQuery(document).ready(function() {
+  jQuery('#home_slider').owlCarousel({
+    lazyLoad: true,
+    items: 1,
+    //animateOut: 'fadeOut',
+    //animateIn: 'fadeIn',
+    slideSpeed: 5000,
+    nav: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    loop: true,
+    dots: true,
+    smartSpeed: 1000,
+  })
+//Recent Presents Slider
+  jQuery('#presents-slider').owlCarousel({
+    lazyLoad: true,
+    items: 5,
+    slideSpeed: 5000,
+    nav: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    //loop: true,
+    dots: false,
+    smartSpeed: 1000,
+    margin: 40,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 2,
+
+      },
+      768: {
+        items: 3,
+
+      },
+      992: {
+        items: 5,
+
+      }
+    },
+  })
+
+//Presents heigth
+  var presentImgW = $('.presents-block').width(),
+    presentImgH = presentImgW * 1.3;
+
+  $('.presents-block .img-presents').height(presentImgH);
+  $(window).resize(function() {
+    var presentImgW = $('.presents-block').width(),
+      presentImgH = presentImgW * 1.3;
+
+    $('.presents-block .img-presents').height(presentImgH);
+  })
+
+
+});
