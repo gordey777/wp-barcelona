@@ -27,46 +27,43 @@
   <header role="banner">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+
           <div class="col-md-12 top-line">
               <div class="reg-left">
                 Регистрация
             </div>
           </div>
-        </div>
-        <div class="col-md-12 ">
-          <div class="col-md-12 black_line">
-          <div class="row">
-            <div class="col-md-4">
-              <span class="head-pink-title">Челябинск BARCELONA</span>
-              <span class="adress">ул. Комсомольский проспект, 78</span>
-              <a href="tel:73517428803" class="head-phone">+7 (351) 742 88 03</a>
-            </div>
-            <div class="col-md-4">
-              <div class="logo">
-                <?php if ( !is_front_page() && !is_home() ){ ?>
-                  <a href="<?php echo home_url(); ?>">
-                <?php } ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
-                <?php if ( !is_front_page() && !is_home() ){ ?>
-                  </a>
-                <?php } ?>
-              </div><!-- /logo -->
-            </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 black_line">
 
-            <div class="col-md-3 col-md-offset-1">
-              <a data-toggle="modal" href="#modal_callback" class="online-entry">+ Онлайн-запись</a>
-            </div>
-
-            <div class="col-md-12">
-              <nav class="nav" role="navigation">
-                <?php wpeHeadNav(); ?>
-              </nav><!-- /nav -->
-            </div>
-
-
+          <div class="col-md-4">
+            <span class="head-pink-title">Челябинск BARCELONA</span>
+            <span class="adress">ул. Комсомольский проспект, 78</span>
+            <a href="tel:73517428803" class="head-phone">+7 (351) 742 88 03</a>
           </div>
+          <div class="col-md-4">
+            <div class="logo">
+              <?php if ( !is_front_page() && !is_home() ){ ?>
+                <a href="<?php echo home_url(); ?>">
+              <?php } ?>
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
+              <?php if ( !is_front_page() && !is_home() ){ ?>
+                </a>
+              <?php } ?>
+            </div><!-- /logo -->
           </div>
+
+          <div class="col-md-3 col-md-offset-1">
+            <a data-toggle="modal" href="#modal_callback" class="online-entry">+ Онлайн-запись</a>
+          </div>
+
+          <div class="col-md-12">
+            <nav class="nav" role="navigation">
+              <?php wpeHeadNav(); ?>
+            </nav><!-- /nav -->
+          </div>
+
         </div>
       </div><!-- /.row -->
     </div><!-- /.container -->

@@ -40,10 +40,16 @@
     </div>
   </div>
 
-<a href="#" id="scrool_top">UP</a>
+<span id="scrool_top" class="go-top">UP</span>
 
   <?php wp_footer(); ?>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
+  <?php if ( is_page_template('page-video.php') ) { ?>
+
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/video-scripts.js'></script>
+  <?php } ?>
 </body>
 </html>

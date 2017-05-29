@@ -56,7 +56,7 @@
                       <h3>
                         <?php the_title(); ?>
                       </h3>
-                      <?php wpeExcerpt('wpeExcerpt40'); ?>
+                      <?php wpeExcerpt('wpeExcerpt20'); ?>
                       <span class="read">Читать</span>
                     </div>
                   </a>

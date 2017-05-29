@@ -4,16 +4,25 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>          <?php edit_post_link(); ?>
       <div class="row">
+        <div class="col-md-12 visible-xs-block">
+          <?php
+          $current_category = get_the_category();
+          $current_cat_id = $current_category[0]->cat_ID;
+          ?>
+          <a rel="nofollow" href="<?php echo get_category_link($current_cat_id); ?>" class="back-to-cat">
+            Назад в <?php echo get_cat_name($current_cat_id);?>
+          </a>
+        </div>
         <div class="col-md-12 content">
           <h1 class="single-title inner-title"><?php the_title(); ?></h1>
           <div class="row">
-            <div class="col-md-8 col-md-offset-2 content">
+            <div class="col-md-8 col-md-offset-2">
               <?php the_content(); ?>
             </div>
           </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12" id="recent_posts">
           <?php $categories = get_the_category($post->ID);
           if ($categories) {
             $category_ids = array();
@@ -25,27 +34,10 @@
               'showposts'=>99,
               'caller_get_posts'=>1);
 
-            $my_query = new wp_query($args);
-            if( $my_query->have_posts() ) { ?>
-              <div class="row">
-                <?php while ($my_query->have_posts()) {
-                    $my_query->the_post(); ?>
-
-                    <div class="col-md-3 col-sm-4">
-                      <?php if ( has_post_thumbnail()) :?>
-                        <a class="single-thumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                          <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-                        </a>
-                      <?php endif; ?>
-                      <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                        <?php the_title(); ?>
-                      </a>
-                    </div>
-                <?php } ?>
-              </div>
-            <?php }
-            wp_reset_query();
-          } ?>
+            query_posts($args); ?>
+            <?php get_template_part('loop'); ?>
+            <?php wp_reset_query(); ?>
+          <?php } ?>
 
         </div>
       </div><!-- /.row -->
