@@ -38,30 +38,33 @@
         </div>
 
         <div class="col-sm-8">
-          <div class="video-block lightblueshadow">
-            <?php
+          <div id="front-video" class="video-block lightblueshadow">
+            <?php if( have_rows('video_gallery', 118 ) ): ?>
 
-            $posts = get_field('video_block');
+              <?php
+              $rows = get_field('video_gallery', 118 );
+              $first_row = $rows[0];
+              $first_row_video = $first_row['video' ];
+              $first_row_image = $first_row_video['thumbs']["maximum"]['url'];
+              $first_row_iframe = $first_row_video['iframe'];
+              $first_row_title = $first_row['title'];
+              $first_row_desc = $first_row['desc'];
 
-            if( $posts ): ?>
-              <?php foreach( $posts as $post ): ?>
-                <?php setup_postdata($post); ?>
-                <a href="<?php echo get_permalink(); ?>">
-                  <?php if ( has_post_thumbnail()) { ?>
-                    <img src="<?php echo the_post_thumbnail_url('medium'); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-                  <?php } else { ?>
-                    <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-                  <?php } ?>
-                </a>
-
-                <div class="video-desc">
-                  <h3><?php the_title(); ?></h3>
-                  <p><?php wpeExcerpt('wpeExcerpt40'); ?></p>
+              ?>
+              <div class="video_plaseholder_wrap videoholder">
+                <div class="placeholder_wrap" data-video="https://www.youtube.com/embed/<?php echo $first_row_video['vid']; ?>?autoplay=1"/>
+                  <img id="video-placeholder" class="video-placeholder" src="<?php echo $first_row_image; ?>">
                 </div>
-              <?php endforeach; ?>
-              <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
+                <div class="video_iframe_wrap">
+                  <iframe class="big-video" src="" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+              </div>
+              <div class="video-description">
+                <h2><?php echo $first_row_title; ?></h2>
+                <p><?php echo $first_row_desc; ?></p>
+              </div>
 
+            <?php endif; ?>
             <a href="<?php echo get_category_link(12); ?>" class="video-button">
               <?php echo get_cat_name(12);?>
             </a>

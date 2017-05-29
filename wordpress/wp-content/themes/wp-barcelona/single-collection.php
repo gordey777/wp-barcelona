@@ -45,13 +45,20 @@ get_header(); ?>
 
         <div class="col-md-4 col-sm-4 present-left img-W">
           <div class="pres-img img-H">
-            <?php if ( has_post_thumbnail()) : ?>
-
-                <a class="single-thumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                  <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-                </a>
-
-            <?php endif; ?>
+            <div id="img__slider">
+              <div class="img__slide">
+                <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+              </div>
+              <?php if( get_field('video') ) { ?>
+                <div class="img__slide" style="display: none;">
+                  <div class="video_wrapp">
+                    <video autoplay="" loop="">
+                      <source src="<?php echo the_field('video'); ?>" type="video/mp4"> This browser doesn't support HTML5 Video;
+                    </video>
+                  </div>
+                </div>
+              <?php } ?>
+            </div>
           </div>
         </div>
 
@@ -114,5 +121,23 @@ get_header(); ?>
     </article>
 
 <?php endwhile; endif; ?>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var len = $('#img__slider .img__slide').length;
+    var idx = 0;
+    if(len > 1){
+      function slide() {
+        $('#img__slider .img__slide').eq(idx).fadeOut();
+        idx++;
+        if (idx === len) {
+          idx = 0;
+        }
+        $('#img__slider .img__slide').eq(idx).fadeIn();
+        s = false;
+      }
+    }
+    var timer = setInterval(slide, 4000);
+  });
 
+  </script>
 <?php get_footer(); ?>
