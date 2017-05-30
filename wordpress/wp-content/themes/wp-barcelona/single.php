@@ -15,6 +15,7 @@
         </div>
         <div class="col-md-12 content">
           <h1 class="single-title inner-title"><?php the_title(); ?></h1>
+
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <?php the_content(); ?>

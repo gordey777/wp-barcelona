@@ -44,6 +44,7 @@ jQuery(document).ready(function() {
     //animateIn: 'fadeIn',
     //slideSpeed: 5000,
     nav: true,
+    margin: 40,
     autoplay: false,
     autoplayHoverPause: true,
     navText: '',
@@ -169,4 +170,10 @@ jQuery(document).ready(function() {
     $('#front-video .big-video').attr("src", data.video);
     $('#front-video .video_plaseholder_wrap').addClass('played');
   });
+
+  $('header .nav').click(function() {
+    $('header .nav').toggleClass('open');
+  });
+
+
 });

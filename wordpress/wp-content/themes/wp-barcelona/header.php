@@ -37,12 +37,12 @@
       <div class="row">
         <div class="col-md-12 black_line">
 
-          <div class="col-md-4">
+          <div class="col-sm-4 hidden-xs">
             <span class="head-pink-title">Челябинск BARCELONA</span>
             <span class="adress">ул. Комсомольский проспект, 78</span>
             <a href="tel:73517428803" class="head-phone">+7 (351) 742 88 03</a>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <div class="logo">
               <?php if ( !is_front_page() && !is_home() ){ ?>
                 <a href="<?php echo home_url(); ?>">
@@ -54,15 +54,15 @@
             </div><!-- /logo -->
           </div>
 
-          <div class="col-md-3 col-md-offset-1">
+          <div class="col-md-3 col-md-offset-1 col-sm-4 online-entry-wrapp">
             <a data-toggle="modal" href="#modal_callback" class="online-entry">+ Онлайн-запись</a>
           </div>
 
-          <div class="col-md-12">
+
             <nav class="nav" role="navigation">
               <?php wpeHeadNav(); ?>
             </nav><!-- /nav -->
-          </div>
+
 
         </div>
       </div><!-- /.row -->

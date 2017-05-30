@@ -25,25 +25,25 @@ get_header(); ?>
   <?php endif; ?>
 
   <?php if (have_posts()): while (have_posts()) : the_post();  ?>
-
+    <?php
+    $current_category = get_the_category();
+    $current_cat_id = $current_category[0]->cat_ID;
+    ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <?php edit_post_link(); ?>
       <div class="row">
         <div class="col-md-12 hidden-xs">
-          <div class="bottom-line">
-            <div class="col-xs-6">
-              <a href="">Салон</a>
+
+          <h1 class="page-title inner-title"><?php echo get_cat_name($current_cat_id);?></h1>
+          <?php if(category_description( $current_cat_id )) { ?>
+            <div class="title-decs">
+              <?php echo category_description( $current_cat_id ); ?>
             </div>
-            <div class="col-xs-6">
-              <a href="">Стилисты</a>
-            </div>
-          </div>
+          <?php } ?>
+
         </div>
         <div class="col-md-12 visible-xs-block">
-          <?php
-          $current_category = get_the_category();
-          $current_cat_id = $current_category[0]->cat_ID;
-          ?>
+
           <a rel="nofollow" href="<?php echo get_category_link($current_cat_id); ?>" class="back-to-cat">
             Назад в <?php echo get_cat_name($current_cat_id);?>
           </a>
@@ -53,15 +53,11 @@ get_header(); ?>
       <div class="row present-row">
 
         <div class="col-md-4 col-sm-4 present-left img-W">
-<div class="pres-img img-H">
-          <?php if ( has_post_thumbnail()) : ?>
-
-              <a class="single-thumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-              </a>
-
-          <?php endif; ?>
-</div>
+          <div class="pres-img img-H">
+            <?php if ( has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+            <?php endif; ?>
+          </div>
         </div>
         <div class="col-md-8 col-sm-8">
           <div class="present-right">
@@ -76,8 +72,8 @@ get_header(); ?>
             <?php the_content(); ?>
             <div class="post__nav">
 
-              <div class="prev"><?php echo get_adjacent_post_link( '%link', '<i class="fa fa-angle-left"></i>', 1 ); ?></div>
-              <div class="next"><?php echo get_adjacent_post_link( '%link', '<i class="fa fa-angle-right"></i>', 1, '', false ); ?></div>
+              <div class="prev"><?php echo get_adjacent_post_link( '%link', '', 1 ); ?></div>
+              <div class="next"><?php echo get_adjacent_post_link( '%link', '', 1, '', false ); ?></div>
 
             </div>
           </div>

@@ -29,10 +29,10 @@
         <div class="col-md-12">
           <div class="bottom-line">
             <div class="col-xs-6">
-              <a href="">Салон</a>
+              <a href="<?php the_permalink(35); ?>">Салон</a>
             </div>
             <div class="col-xs-6">
-              <a href="">Стилисты</a>
+              <a href="<?php echo get_category_link(11); ?>">Стилисты</a>
             </div>
           </div>
         </div>
@@ -65,16 +65,19 @@
               </div>
 
             <?php endif; ?>
-            <a href="<?php echo get_category_link(12); ?>" class="video-button">
-              <?php echo get_cat_name(12);?>
-            </a>
+          <a href="<?php the_permalink(118); ?>" class="video-button">
+            Видео
+          </a>
           </div><!-- /.video-block -->
+
         </div>
 
         <div class="col-sm-4">
-          <div class="gifts-block">
+
+          <a href="<?php echo get_category_link(10); ?>" class="gifts-block">
             <img src="<?php echo get_template_directory_uri(); ?>/img/presents_bg.jpg" alt="">
-          </div>
+            <h4 class="gift_title"><?php echo get_cat_name(10);?></h4>
+          </a>
         </div><!-- /.gifts-block -->
 
         <?php get_sidebar(); ?>

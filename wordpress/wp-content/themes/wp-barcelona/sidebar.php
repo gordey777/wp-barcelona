@@ -74,7 +74,7 @@
 
         <div class="col-sm-4">
           <div data-toggle="modal" data-target="#modal_callback" class="reg-form lightblueshadow">
-
+            <h3>Регистрация</h3>
             <span>Регистрируйтесь для получения привилегий и выгодных предложений салона</span>
           </div><!-- /.cont-form -->
         </div>

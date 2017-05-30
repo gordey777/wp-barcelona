@@ -40,7 +40,7 @@
     </div>
   </div>
 
-<span id="scrool_top" class="go-top">UP</span>
+<span id="scrool_top" class="go-top"><i class="fa fa-caret-up"></i></span>
 
   <?php wp_footer(); ?>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>

@@ -12,6 +12,7 @@
     <?php }
     else { ?>
   <article>
+
     <div class="row">
       <div class="col-md-12">
         <h1 class="cat-title inner-title"><?php if( is_category() ) echo get_queried_object()->name; ?></h1>
