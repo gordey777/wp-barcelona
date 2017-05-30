@@ -20,20 +20,33 @@
   </div><!-- /.container -->
 </footer><!-- /footer -->
 
-  <!-- / MODAL VINDOW Order-->
-  <div id="modal_callback" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- / MODAL VINDOW-->
+  <div id="modal_registration" class="modal__form modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-md">
       <div class="modal-content clearfix">
         <div class="modal-header">
-        <span  data-dismiss="modal" aria-label="Close" class="close-nav close-video">X</span>
-          <div class="button-wrap close" data-dismiss=modal aria-hidden=true>
-            <span class="top-line"></span>
+          <div  data-dismiss="modal" aria-label="Close" class="close-nav close-video"><i class="fa fa-times-circle"></i></div>
+          <h4 class="modal-title">Регистрация</h4>
+        </div>
+        <div class="modal-body">
+          <div class="col-xs-12">
+            <?php echo do_shortcode('[contact-form-7 id="218" title="Регистрация"]'); ?>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal_entry" class="modal__form modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content clearfix">
+        <div class="modal-header">
+            <div data-dismiss="modal" aria-label="Close" class="close-nav close-video"><i class="fa fa-times-circle"></i></div>
           <h4 class="modal-title">Обратный звонок</h4>
         </div>
         <div class="modal-body">
           <div class="col-xs-12">
-            <?php echo do_shortcode('[contact-form-7 id="30" title="Модальное Обратный звонок"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 id="219" title="Онлайн-заявка"]'); ?>
           </div>
         </div>
       </div>

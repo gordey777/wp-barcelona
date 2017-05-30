@@ -124,9 +124,16 @@ header {
       position: relative;
       z-index: 3;
 
+      display: inline-block;
       float: right;
 
+      padding-right: 15px;
+
+      cursor: pointer;
       vertical-align: middle;
+      &:hover {
+        color: $pink;
+      }
     }
     &:before {
       position: absolute;
@@ -298,8 +305,12 @@ header {
 
 .title-decs {
   width: 100%;
+  padding: 0 15px;
 
   text-align: center;
+  p {
+    margin-bottom: 30px;
+  }
 }
 //HOME SLIDER
 #home_slider {
@@ -765,6 +776,11 @@ header {
 
   background: url('../img/color-logo.png') no-repeat center 30px;
   background-color: #fff;
+  h3 {
+    font-size: 20px;
+
+    text-transform: uppercase;
+  }
   span {
     text-align: center;
   }
@@ -792,6 +808,9 @@ header {
 
   opacity: 1;
 } */
+    h3 {
+      color: $pink;
+    }
   }
 }
 
@@ -1943,7 +1962,59 @@ footer {
   }
 }
 
+.modal__form {
+  .modal-header {
+    text-align: center;
 
+    color: #fff;
+    background: $gray-dark;
+    .close-nav {
+      font-size: 30px;
+
+      position: absolute;
+      top: 9px;
+      right: 13px;
+
+      display: inline-block;
+
+      cursor: pointer;
+
+      border-radius: 50%;
+      &:hover {
+        color: $pink;
+      }
+    }
+    .modal-title {
+      font-size: 20px;
+
+      display: inline-block;
+
+      text-transform: uppercase;
+    }
+  }
+  .modal-content {
+    padding-bottom: 30px;
+
+    border-radius: 0;
+    .input-wrapp {
+      display: inline-block;
+
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      text-align: center;
+      textarea {
+        margin-bottom: 20px;
+
+        border-radius: 0;
+      }
+      input {
+        border-radius: 0;
+      }
+    }
+  }
+}
 
 
 #scrool_top {
@@ -1951,7 +2022,8 @@ footer {
   line-height: 45px;
 
   position: fixed;
-  right: 5%;
+  z-index: 9;
+  right: 2%;
   bottom: 5%;
 
   display: inline-block;
@@ -2105,6 +2177,12 @@ footer {
             background: #000;
             a {
               color: #fff;
+            }
+          }
+          &:hover,
+          &.current-menu-item {
+            a {
+              color: $pink;
             }
           }
         }

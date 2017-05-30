@@ -24,7 +24,9 @@
         <?php edit_post_link(); ?>
         <div class="col-md-12 content">
           <h1 class="cat-title inner-title"><?php if( is_category() ) echo get_queried_object()->name; ?></h1>
-          <?php //the_content(); ?>
+          <div class="title-decs">
+            <?php echo category_description( ); ?>
+          </div>
         </div>
 
           <?php if (have_posts()): ?>

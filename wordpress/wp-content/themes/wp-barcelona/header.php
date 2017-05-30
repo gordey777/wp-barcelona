@@ -27,12 +27,11 @@
   <header role="banner">
     <div class="container">
       <div class="row">
-
-          <div class="col-md-12 top-line">
-              <div class="reg-left">
-                Регистрация
-            </div>
+        <div class="col-md-12 top-line">
+          <div class="reg-left hidden-xs" data-toggle="modal" data-target="#modal_registration">
+            Регистрация
           </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12 black_line">
@@ -55,12 +54,18 @@
           </div>
 
           <div class="col-md-3 col-md-offset-1 col-sm-4 online-entry-wrapp">
-            <a data-toggle="modal" href="#modal_callback" class="online-entry">+ Онлайн-запись</a>
+            <a data-toggle="modal" href="#modal_entry" class="online-entry">+ Онлайн-запись</a>
           </div>
 
 
             <nav class="nav" role="navigation">
-              <?php wpeHeadNav(); ?>
+              <ul class="headnav">
+                <?php wpeHeadNav(); ?>
+                <li class="visible-xs-inline-block">
+                  <a rel="nofollow" data-toggle="modal" data-target="#modal_registration" href="#modal_registration">Регистрация</a>
+                </li>
+              </ul>
+
             </nav><!-- /nav -->
 
 

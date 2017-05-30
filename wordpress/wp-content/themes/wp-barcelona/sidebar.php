@@ -73,7 +73,7 @@
         <?php endif; ?>
 
         <div class="col-sm-4">
-          <div data-toggle="modal" data-target="#modal_callback" class="reg-form lightblueshadow">
+          <div data-toggle="modal" data-target="#modal_registration" class="reg-form lightblueshadow">
             <h3>Регистрация</h3>
             <span>Регистрируйтесь для получения привилегий и выгодных предложений салона</span>
           </div><!-- /.cont-form -->
@@ -82,5 +82,5 @@
         <div class="clearfix"></div>
 
         <div class="col-md-4 col-md-offset-4">
-          <a href="#" class="tel-button lightblueshadow">+7 (351) 742 88 03</a>
+          <a href="tel:+73517428803" class="tel-button lightblueshadow">+7 (351) 742 88 03</a>
         </div>
