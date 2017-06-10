@@ -3,8 +3,6 @@
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
-
       <?php if( have_rows('main_slider') ): ?>
         <div id="home_slider" class="owl-carousel owl-theme">
           <?php while ( have_rows('main_slider') ) : the_row(); ?>
@@ -41,7 +39,6 @@
         <div class="col-sm-8">
           <div id="front-video" class="video-block lightblueshadow">
             <?php if( have_rows('video_gallery', 118 ) ): ?>
-
               <?php
               $rows = get_field('video_gallery', 118 );
               $first_row = $rows[0];
@@ -50,8 +47,8 @@
               $first_row_iframe = $first_row_video['iframe'];
               $first_row_title = $first_row['title'];
               $first_row_desc = $first_row['desc'];
-
               ?>
+
               <div class="video_plaseholder_wrap videoholder">
                 <div class="placeholder_wrap" data-video="https://www.youtube.com/embed/<?php echo $first_row_video['vid']; ?>?autoplay=1"/>
                   <img id="video-placeholder" class="video-placeholder" src="<?php echo $first_row_image; ?>">
@@ -66,9 +63,9 @@
               </div>
 
             <?php endif; ?>
-          <a href="<?php the_permalink(118); ?>" class="video-button">
-            Видео
-          </a>
+            <a href="<?php the_permalink(118); ?>" class="video-button">
+              Видео
+            </a>
           </div><!-- /.video-block -->
         </div>
 
@@ -81,7 +78,6 @@
         </div>
 
       </div><!-- /.row -->
-
       <?php get_sidebar(); ?>
     </article>
   <?php endwhile; endif; ?>

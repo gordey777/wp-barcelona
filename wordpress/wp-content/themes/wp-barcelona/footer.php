@@ -63,6 +63,26 @@
     <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js'></script>
     <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/video-scripts.js'></script>
   <?php } ?>
+  <?php if ( is_page_template('single-collection.php') ) { ?>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var len = $('#img__slider .img__slide').length;
+      var idx = 0;
+      if(len > 1){
+        function slide() {
+          $('#img__slider .img__slide').eq(idx).fadeOut();
+          idx++;
+          if (idx === len) {
+            idx = 0;
+          }
+          $('#img__slider .img__slide').eq(idx).fadeIn();
+          s = false;
+        }
+      }
+      var timer = setInterval(slide, 4000);
+    });
+    </script>
+  <?php } ?>
 
 <!-- Скрипт для АРНИКИ -->
   <script type="text/javascript" src="//app.arnica.pro/booking/script?orgid=28060"></script>
