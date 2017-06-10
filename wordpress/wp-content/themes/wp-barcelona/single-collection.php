@@ -4,30 +4,10 @@ Template Post Type: post
 */
 get_header(); ?>
 
-  <?php if( have_rows('main_slider', 31 ) ): ?>
-    <div id="home_slider" class="owl-carousel owl-theme">
-      <?php while ( have_rows('main_slider', 31 ) ) : the_row(); ?>
-        <?php $image = get_sub_field('img'); ?>
-        <?php $link = get_sub_field('link'); ?>
-        <div class="item" <?php if ( !empty($image)) : ?> style="background-image: url('<?php echo $image['url']; ?>');"<?php endif; ?>>
-
-          <?php  if ( !empty($link)) { ?>
-            <a href="<?php the_sub_field('link'); ?>">
-          <?php } ?>
-
-            <span class="slide-title"><?php the_sub_field('title'); ?></span>
-          <?php  if ( !empty($link)) { ?>
-            </a>
-          <?php } ?>
-        </div>
-      <?php  endwhile; ?>
-    </div>
-  <?php endif; ?>
-
   <?php if (have_posts()): while (have_posts()) : the_post();  ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <?php edit_post_link(); ?>
+
       <div class="row">
 
         <div class="col-md-12 visible-xs-block">
@@ -36,14 +16,14 @@ get_header(); ?>
           $current_cat_id = $current_category[0]->cat_ID;
           ?>
           <a rel="nofollow" href="<?php echo get_category_link($current_cat_id); ?>" class="back-to-cat">
-            Назад в <?php echo get_cat_name($current_cat_id);?>
+            <i class="fa fa-angle-left"></i>Назад в <?php echo get_cat_name($current_cat_id);?>
           </a>
         </div>
       </div>
 
       <div class="row present-row">
 
-        <div class="col-md-4 col-sm-4 present-left img-W">
+        <div class="col-md-4 col-sm-4 present-left img-W"><?php edit_post_link(); ?>
           <div class="pres-img img-H">
             <div id="img__slider">
               <div class="img__slide">
@@ -65,13 +45,15 @@ get_header(); ?>
         <div class="col-md-8 col-sm-8">
           <div class="collection-right">
             <div class="coll-content">
-              <h1 class="present-title"><?php the_title(); ?></h1>
-<!--               <?php if( get_field('desc') ) { ?>
-  <span class="short_desc">
-    <?php the_field('desc'); ?>
-  </span>
-<?php } ?> -->
-              <?php the_content(); ?>
+
+                <h1 class="present-title"><?php the_title(); ?></h1>
+  <!--               <?php //if( get_field('desc') ) { ?>
+    <span class="short_desc">
+      <?php //the_field('desc'); ?>
+    </span>
+  <?php //} ?> -->
+                <?php the_content(); ?>
+
             </div>
 
 
@@ -81,14 +63,11 @@ get_header(); ?>
                   <?php while ( have_rows('products_slider') ) : the_row(); ?>
                     <?php $image = get_sub_field('img'); ?>
                     <div class="item">
+                      <div class="prod-img" <?php if ( !empty($image)) : ?> style="background-image: url('<?php echo $image['url']; ?>');"<?php endif; ?>>
+                      </div>
                       <span class="slide-title"><?php the_sub_field('title'); ?></span>
-
                       <span class="sub-title"><?php the_sub_field('sub_title'); ?></span>
                       <div class="prod-desc"><?php the_sub_field('desc'); ?></div>
-
-                      <div class="prod-img" <?php if ( !empty($image)) : ?> style="background-image: url('<?php echo $image['url']; ?>');"<?php endif; ?>>
-
-                      </div>
                     </div>
                   <?php  endwhile; ?>
 
@@ -111,7 +90,7 @@ get_header(); ?>
                   <?php  endwhile; ?>
 
                 </div>
-                <div class="show_more visible-xs-block">Показать больше</div>
+                <div class="show_more visible-xs-block">Читать больше<i class="fa fa-angle-down"></i></div>
             <?php endif; ?>
           </div>
         </div>

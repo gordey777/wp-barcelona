@@ -1,6 +1,11 @@
-  <?php if( have_rows('main_slider', 31 ) ): ?>
+<div class="row visible-xs-block">
+  <div class="col-md-12">
+    <h2 class="mob-bread"><?php if( is_category() ) echo get_queried_object()->name; ?></h2>
+  </div>
+</div>
+  <?php if( have_rows('presents_baner', 31 ) ): ?>
     <div id="home_slider" class="owl-carousel owl-theme">
-      <?php while ( have_rows('main_slider', 31 ) ) : the_row(); ?>
+      <?php while ( have_rows('presents_baner', 31 ) ) : the_row(); ?>
         <?php $image = get_sub_field('img'); ?>
         <?php $link = get_sub_field('link'); ?>
         <div class="item" <?php if ( !empty($image)) : ?> style="background-image: url('<?php echo $image['url']; ?>');"<?php endif; ?>>
@@ -52,15 +57,15 @@
                           <h3 class="title">
                             <?php the_title(); ?>
                           </h3>
+
+                          <div class="desc hidden-xs">
+                            <div class="short-desc"><?php the_field('short_desc'); ?></div>
+                          </div>
+
+                          <span href="<?php echo get_category_link($cat_id); ?>" class="bot-line hidden-xs">
+                            <?php the_field('category'); ?>
+                          </span>
                          </a>
-                        <div class="desc hidden-xs">
-                          <div class="short-desc"><?php the_field('short_desc'); ?></div>
-                        </div>
-
-                        <a href="<?php echo get_category_link($cat_id); ?>" class="bot-line hidden-xs">
-                          <?php echo get_cat_name($cat_id);?>
-                        </a>
-
                       </div><!-- /looper -->
                   </div>
                 <?php endwhile; ?>
@@ -74,7 +79,7 @@
       </article>
 
 
-    <?php get_sidebar(); ?>
+
   </div><!-- /.row -->
 
 

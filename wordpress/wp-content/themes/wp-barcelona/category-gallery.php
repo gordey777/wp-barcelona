@@ -1,3 +1,8 @@
+  <div class="row visible-xs-block">
+    <div class="col-md-12">
+      <h2 class="mob-bread white"><?php if( is_category() ) echo get_queried_object()->name; ?></h2>
+    </div>
+  </div>
   <div class="row">
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php if (have_posts()): ?>
@@ -36,7 +41,7 @@
       </article>
 
 
-    <?php get_sidebar(); ?>
-  </div><!-- /.row -->
 
+  </div><!-- /.row -->
+    <?php //get_sidebar(); ?>
 

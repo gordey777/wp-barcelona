@@ -4,7 +4,6 @@
 
     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <?php edit_post_link(); ?>
 
           <?php if( have_rows('video_gallery' ) ): ?>
             <?php
@@ -15,6 +14,9 @@
             $first_row_iframe = $first_row_video['iframe']; // get the sub field value
             ?>
             <div class="row" id="content-video">
+              <div class="col-md-12 visible-xs-block">
+                <h1 class="page-title inner-title"><?php the_title(); ?></h1>
+              </div>
               <div class="col-md-12">
                 <div id="top-container" style="position:relative;">
                   <div id="main-video" class="videoholder">
@@ -33,23 +35,32 @@
             </div>
 
             <div id="video-container" class="row row-flax">
+            <?php edit_post_link(); ?>
               <?php
               $i = 0;
               while ( have_rows('video_gallery' ) ) : the_row(); ?>
                 <?php $i++;
                 $video = get_sub_field('video');?>
-                  <div class="col-md-3 c0l-sm-4 col-xs-6">
+                  <div class="col-md-3 col-sm-4">
                     <div id="videouniquenumber_<?php echo $i; ?>" class="span3 filter-all filter-various" data-item_page="">
                       <div class="transparent">
                         <a href="javascript:void(0)" data-video="https://www.youtube.com/embed/<?php echo $video['vid']; ?>" data-bigimage="<?php echo $video['thumbs']["maximum"]['url']; ?>" data-pushurl="" data-sharetitle="">
-                          <div class="video-thumb">
-                            <div class="now_playing">NOW PLAYING</div>
-                            <div class="video_play_overlay_layer little-player"></div>
-                            <img src="<?php echo $video['thumbs']["medium"]['url']; ?>">
+                          <div class=" col-md-12 col-xs-6">
+                            <div class="row">
+                              <div class="video-thumb">
+                                <div class="now_playing">NOW PLAYING</div>
+                                <div class="video_play_overlay_layer little-player"></div>
+                                <img src="<?php echo $video['thumbs']["medium"]['url']; ?>">
+                              </div>
+                            </div>
                           </div>
-                          <div class="box-content ">
-                            <h2><?php the_sub_field('title'); ?></h2>
-                            <p><?php the_sub_field('desc'); ?></p>
+                          <div class="col-md-12 col-xs-6">
+                            <div class="row">
+                              <div class="box-content">
+                                <h2><?php the_sub_field('title'); ?></h2>
+                                <p><?php the_sub_field('desc'); ?></p>
+                              </div>
+                            </div>
                           </div>
                           <div class="video-featured-description">
                             <h2><?php the_sub_field('title'); ?></h2>

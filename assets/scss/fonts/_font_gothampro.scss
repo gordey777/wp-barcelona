@@ -5,11 +5,11 @@ $rb-font-path: '../fonts' !default;
   font-weight: 300;
   font-style: normal;
 
-  src: url('#{$rb-font-path}/GothamProlight.eot');
+  src: url('#{$rb-font-path}/GothamProLight.eot');
   src: local('GothamPro Light'),
-  local('GothamProlight'),
-  url('#{$rb-font-path}/GothamProlight.eot') format('embedded-opentype'),
-  url('#{$rb-font-path}/GothamProlight.woff') format('woff');
+  local('GothamProLight'),
+  url('#{$rb-font-path}/GothamProLight.eot') format('embedded-opentype'),
+  url('#{$rb-font-path}/GothamProLight.woff') format('woff');
 }
 
 @font-face {
@@ -17,11 +17,11 @@ $rb-font-path: '../fonts' !default;
   font-weight: 400;
   font-style: normal;
 
-  src: url('#{$rb-font-path}/GothamProregular.eot');
+  src: url('#{$rb-font-path}/GothamProRegular.eot');
   src: local('GothamPro Regular'),
-  local('GothamProregular'),
-  url('#{$rb-font-path}/GothamProregular.eot') format('embedded-opentype'),
-  url('#{$rb-font-path}/GothamProregular.woff') format('woff');
+  local('GothamProRegular'),
+  url('#{$rb-font-path}/GothamProRegular.eot') format('embedded-opentype'),
+  url('#{$rb-font-path}/GothamProRegular.woff') format('woff');
 }
 
 @font-face {
@@ -29,47 +29,47 @@ $rb-font-path: '../fonts' !default;
   font-weight: 700;
   font-style: normal;
 
-  src: url('#{$rb-font-path}/GothamProbold.eot');
+  src: url('#{$rb-font-path}/GothamProBold.eot');
   src: local('GothamPro Regular'),
-  local('GothamProbold'),
-  url('#{$rb-font-path}/GothamProbold.eot') format('embedded-opentype'),
-  url('#{$rb-font-path}/GothamProbold.woff') format('woff');
+  local('GothamProBold'),
+  url('#{$rb-font-path}/GothamProBold.eot') format('embedded-opentype'),
+  url('#{$rb-font-path}/GothamProBold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GothamPro';
   font-weight: 300;
-  font-style: italic;
+  font-style: Italic;
 
-  src: url('#{$rb-font-path}/GothamProlightitalic.eot');
+  src: url('#{$rb-font-path}/GothamProLightItalic.eot');
   src: local('GothamPro Light Italic'),
-  local('GothamProlightitalic'),
-  url('#{$rb-font-path}/GothamProlightitalic.eot') format('embedded-opentype'),
-  url('#{$rb-font-path}/GothamProlightitalic.woff') format('woff');
+  local('GothamProLightItalic'),
+  url('#{$rb-font-path}/GothamProLightItalic.eot') format('embedded-opentype'),
+  url('#{$rb-font-path}/GothamProLightItalic.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GothamPro';
   font-weight: 400;
-  font-style: italic;
+  font-style: Italic;
 
-  src: url('#{$rb-font-path}/GothamProitalic.eot');
+  src: url('#{$rb-font-path}/GothamProItalic.eot');
   src: local('GothamPro Italic'),
-  local('GothamProitalic'),
-  url('#{$rb-font-path}/GothamProitalic.eot') format('embedded-opentype'),
-  url('#{$rb-font-path}/GothamProitalic.woff') format('woff');
+  local('GothamProItalic'),
+  url('#{$rb-font-path}/GothamProItalic.eot') format('embedded-opentype'),
+  url('#{$rb-font-path}/GothamProItalic.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GothamPro';
   font-weight: 700;
-  font-style: italic;
+  font-style: Italic;
 
-  src: url('#{$rb-font-path}/GothamProbolditalic.eot');
+  src: url('#{$rb-font-path}/GothamProBoldItalic.eot');
   src: local('GothamPro Bold Italic'),
-  local('GothamProbolditalic'),
-  url('#{$rb-font-path}/GothamProbolditalic.eot') format('embedded-opentype'),
-  url('#{$rb-font-path}/GothamProbolditalic.woff') format('woff');
+  local('GothamProBoldItalic'),
+  url('#{$rb-font-path}/GothamProBoldItalic.eot') format('embedded-opentype'),
+  url('#{$rb-font-path}/GothamProBoldItalic.woff') format('woff');
 }
 
 

@@ -1,8 +1,8 @@
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>          <?php edit_post_link(); ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="row">
         <div class="col-md-12 content">
-          <h1 class="single-title inner-title"><?php the_title(); ?></h1>
+          <h1 class="single-title inner-title"><?php the_title(); ?></h1><?php edit_post_link(); ?>
           <div class="row">
 
             <div class="col-md-8 col-md-offset-2">

@@ -1,7 +1,7 @@
-        <div class="clearfix"></div>
-
+<div class="clearfix"></div>
+<div class="row flex-row">
         <?php if( have_rows('shape_block', 31) ): ?>
-          <div class="col-sm-4">
+          <div class="col-sm-4 hidden-xs">
             <?php while ( have_rows('shape_block', 31) ) : the_row(); ?>
             <div class="shape-block lightblueshadow">
               <?php $image = get_sub_field('img'); ?>
@@ -12,16 +12,16 @@
                 <span class="title"><?php the_sub_field('title'); ?></span>
                 <span class="name"><?php the_sub_field('name'); ?></span>
               </div>
-              <?php if( have_rows('socials') ): ?>
+              <?php if( have_rows('socials', 31) ): ?>
                 <div class="socials">
-                  <?php while ( have_rows('socials') ) : the_row(); ?>
+                  <?php while ( have_rows('socials', 31) ) : the_row(); ?>
                     <a class="soc-link" href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('sub_title'); ?>">
                       <i class="fa <?php the_sub_field('icon'); ?>"></i>
                     </a>
                   <?php  endwhile; ?>
                 </div>
               <?php endif; ?>
-              <span class="hash"><?php the_sub_field('hash'); ?></span>
+              <a href="https://www.instagram.com/barca_salon/" class="hash"><?php the_sub_field('hash'); ?></a>
 
 
             </div><!-- /.shape-block -->
@@ -74,8 +74,10 @@
 
         <div class="col-sm-4">
           <div data-toggle="modal" data-target="#modal_registration" class="reg-form lightblueshadow">
-            <h3>Регистрация</h3>
+            <div class="color-logo"></div>
+
             <span>Регистрируйтесь для получения привилегий и выгодных предложений салона</span>
+            <span class="reg-mail">E-mail</span>
           </div><!-- /.cont-form -->
         </div>
 
@@ -84,3 +86,4 @@
         <div class="col-md-4 col-md-offset-4">
           <a href="tel:+73517428803" class="tel-button lightblueshadow">+7 (351) 742 88 03</a>
         </div>
+</div>

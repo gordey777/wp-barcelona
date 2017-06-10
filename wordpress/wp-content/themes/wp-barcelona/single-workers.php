@@ -5,7 +5,7 @@ Template Post Type: post
 get_header(); ?>
 
   <?php if( have_rows('main_slider', 31 ) ): ?>
-    <div id="home_slider" class="owl-carousel owl-theme">
+    <div id="home_slider" class="owl-carousel owl-theme hidden-xs">
       <?php while ( have_rows('main_slider', 31 ) ) : the_row(); ?>
         <?php $image = get_sub_field('img'); ?>
         <?php $link = get_sub_field('link'); ?>
@@ -30,11 +30,11 @@ get_header(); ?>
     $current_cat_id = $current_category[0]->cat_ID;
     ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <?php edit_post_link(); ?>
+
       <div class="row">
         <div class="col-md-12 hidden-xs">
 
-          <h1 class="page-title inner-title"><?php echo get_cat_name($current_cat_id);?></h1>
+          <h2 class="page-title inner-title"><?php echo get_cat_name($current_cat_id);?></h2>
           <?php if(category_description( $current_cat_id )) { ?>
             <div class="title-decs">
               <?php echo category_description( $current_cat_id ); ?>
@@ -45,31 +45,38 @@ get_header(); ?>
         <div class="col-md-12 visible-xs-block">
 
           <a rel="nofollow" href="<?php echo get_category_link($current_cat_id); ?>" class="back-to-cat">
-            Назад в <?php echo get_cat_name($current_cat_id);?>
+            <i class="fa fa-angle-left"></i>Назад в <?php echo get_cat_name($current_cat_id);?>
           </a>
         </div>
 
       </div>
       <div class="row present-row">
 
-        <div class="col-md-4 col-sm-4 present-left img-W">
+        <div class="col-md-4 col-sm-4 present-left img-W"><?php edit_post_link(); ?>
+
           <div class="pres-img img-H">
             <?php if ( has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+              <a class="single-thumb" rel="lightbox" href="<?php the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>">
+                <?php the_post_thumbnail('medium'); ?>
+              </a>
             <?php endif; ?>
           </div>
         </div>
         <div class="col-md-8 col-sm-8">
           <div class="present-right">
-            <h1 class="present-title"><?php the_title(); ?></h1>
-
-            <?php if( get_field('description') ) { ?>
-              <span class="short_desc">
-                <?php the_field('description'); ?>
-              </span>
-            <?php } ?>
-
-            <?php the_content(); ?>
+            <div class="title__wrap">
+              <h1 class="present-title"><?php the_title(); ?></h1>
+              <?php $image = get_field('logo'); ?>
+              <?php if( get_field('description') ) { ?>
+                <span class="short_desc">
+                  <?php the_field('description'); ?>
+                </span>
+              <?php } ?>
+            </div>
+            <div class="press_logo" <?php if ( !empty($image)) : ?> style="background-image: url('<?php echo $image['url']; ?>');"<?php endif; ?>></div>
+            <div class="press_content">
+              <?php the_content(); ?>
+            </div>
             <div class="post__nav">
 
               <div class="prev"><?php echo get_adjacent_post_link( '%link', '', 1 ); ?></div>

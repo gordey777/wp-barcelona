@@ -1,5 +1,5 @@
   <?php if( have_rows('main_slider', 31 ) ): ?>
-    <div id="home_slider" class="owl-carousel owl-theme">
+    <div id="home_slider" class="owl-carousel owl-theme hidden-xs">
       <?php while ( have_rows('main_slider', 31 ) ) : the_row(); ?>
         <?php $image = get_sub_field('img'); ?>
         <?php $link = get_sub_field('link'); ?>
@@ -66,8 +66,8 @@
 
       </article>
 
-
-    <?php get_sidebar(); ?>
   </div><!-- /.row -->
-
+  <div class="hidden-xs">
+    <?php get_sidebar(); ?>
+  </div>
 

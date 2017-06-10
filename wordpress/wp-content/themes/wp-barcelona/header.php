@@ -23,14 +23,30 @@
 <body <?php body_class(); ?>>
 <!-- wrapper -->
 <div class="wrapper">
+    <div class="container">
 
   <header role="banner">
-    <div class="container">
+
       <div class="row">
         <div class="col-md-12 top-line">
-          <div class="reg-left hidden-xs" data-toggle="modal" data-target="#modal_registration">
-            Регистрация
-          </div>
+
+            <div class="mob-left col-xs-6  visible-xs-inline-block">
+              Челябинск
+            </div>
+            <?php if( have_rows('socials', 31) ): ?>
+
+              <div class="socials col-xs-6  visible-xs-inline-block">
+                <?php while ( have_rows('socials', 31) ) : the_row(); ?>
+                  <a class="soc-link" href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('sub_title'); ?>">
+                    <i class="fa <?php the_sub_field('icon'); ?>"></i>
+                  </a>
+                <?php  endwhile; ?>
+              </div>
+            <?php endif; ?>
+            <div class="reg-left hidden-xs" data-toggle="modal" data-target="#modal_registration">
+              Регистрация
+            </div>
+
         </div>
       </div>
       <div class="row">
@@ -54,7 +70,8 @@
           </div>
 
           <div class="col-md-3 col-md-offset-1 col-sm-4 online-entry-wrapp">
-            <a data-toggle="modal" href="#modal_entry" class="online-entry">+ Онлайн-запись</a>
+<!-- <a data-toggle="modal" href="#modal_entry" class="online-entry">+ Онлайн-запись</a> -->  <!-- Кнопка для модального окна -->
+            <span onclick="onlineBooking.open();return false;" class="online-entry">+ Онлайн-запись</span><!-- Кноапка для АРНИКИ -->
           </div>
 
 
@@ -71,10 +88,9 @@
 
         </div>
       </div><!-- /.row -->
-    </div><!-- /.container -->
+
   </header><!-- /header -->
 
 
   <section role="main">
-    <div class="container">
       <div class="inner">

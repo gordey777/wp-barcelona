@@ -26,8 +26,22 @@ jQuery(document).ready(function() {
   jQuery('#home_slider').owlCarousel({
     lazyLoad: true,
     items: 1,
-    //animateOut: 'fadeOut',
-    //animateIn: 'fadeIn',
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    slideSpeed: 5000,
+    nav: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    loop: true,
+    dots: true,
+    smartSpeed: 1000,
+  });
+
+  jQuery('#salone_slider').owlCarousel({
+    lazyLoad: true,
+    items: 1,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
     slideSpeed: 5000,
     nav: false,
     autoplay: true,
@@ -130,9 +144,12 @@ jQuery(document).ready(function() {
     $('.inst-row .content').toggleClass('open');
   });
 
-  // Show or hide the sticky footer button
+
+    // Show or hide the sticky footer button
   jQuery(window).scroll(function() {
-    if (jQuery(this).scrollTop() > 400) {
+
+    var scrollH = jQuery(window).height();
+    if (jQuery(this).scrollTop() > (scrollH * .9)) {
       jQuery('.go-top').fadeIn(200);
     } else {
       jQuery('.go-top').fadeOut(200);

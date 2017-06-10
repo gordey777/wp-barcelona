@@ -3,7 +3,7 @@
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-      <?php edit_post_link(); ?>
+
 
       <?php if( have_rows('main_slider') ): ?>
         <div id="home_slider" class="owl-carousel owl-theme">
@@ -25,18 +25,19 @@
         </div>
       <?php endif; ?>
 
-      <div class="row">
+      <div class="row hidden-xs">
         <div class="col-md-12">
           <div class="bottom-line">
             <div class="col-xs-6">
-              <a href="<?php the_permalink(35); ?>">Салон</a>
+              <a href="<?php the_permalink(35); ?>" class="col-md-9 col-md-offset-3">Салон</a>
             </div>
             <div class="col-xs-6">
-              <a href="<?php echo get_category_link(11); ?>">Стилисты</a>
+              <a href="<?php echo get_category_link(11); ?> " class="col-md-9">Стилисты</a>
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="row flex-row">
         <div class="col-sm-8">
           <div id="front-video" class="video-block lightblueshadow">
             <?php if( have_rows('video_gallery', 118 ) ): ?>
@@ -61,7 +62,7 @@
               </div>
               <div class="video-description">
                 <h2><?php echo $first_row_title; ?></h2>
-                <p><?php echo $first_row_desc; ?></p>
+                <a href="<?php the_permalink(118); ?>" class="video-desc"><?php echo $first_row_desc; ?></a>
               </div>
 
             <?php endif; ?>
@@ -69,23 +70,20 @@
             Видео
           </a>
           </div><!-- /.video-block -->
-
         </div>
 
         <div class="col-sm-4">
-
+        <?php edit_post_link(); ?>
           <a href="<?php echo get_category_link(10); ?>" class="gifts-block">
             <img src="<?php echo get_template_directory_uri(); ?>/img/presents_bg.jpg" alt="">
             <h4 class="gift_title"><?php echo get_cat_name(10);?></h4>
-          </a>
-        </div><!-- /.gifts-block -->
-
-        <?php get_sidebar(); ?>
+          </a><!-- /.gifts-block -->
+        </div>
 
       </div><!-- /.row -->
+
+      <?php get_sidebar(); ?>
     </article>
   <?php endwhile; endif; ?>
-
-
 
 <?php get_footer(); ?>
