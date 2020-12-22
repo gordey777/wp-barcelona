@@ -89,7 +89,7 @@
     "gulp-util": "^3.0.7",
     "gulp.spritesmith": "^6.2.0",
     "imagemin-pngquant": "^5.0.0",
-    "node-notifier": "^4.6.0",
+    "node-notifier": "^8.0.1",
     "run-sequence": "^1.1.5"
   }
 }
